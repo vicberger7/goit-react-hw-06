@@ -1,7 +1,8 @@
 import css from "./Contact.module.css";
 import { HiPhone, HiUser } from "react-icons/hi2";
 
-export default function Contact({ data: { id, name, number }, onDelete }) {
+export default function Contact({ id, name, number, onDelete }) {
+  // const onAddContact = dispatch(addContact);
   return (
     <div className={css.container}>
       <div className={css.textContainer}>
