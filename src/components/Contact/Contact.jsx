@@ -1,8 +1,13 @@
 import css from "./Contact.module.css";
 import { HiPhone, HiUser } from "react-icons/hi2";
 
+// import { useDispatch } from "react-redux";
+// import { addContact } from "../../redux/contactsSlice";
+
 export default function Contact({ id, name, number, onDelete }) {
+  // const dispatch = useDispatch();
   // const onAddContact = dispatch(addContact);
+
   return (
     <div className={css.container}>
       <div className={css.textContainer}>
