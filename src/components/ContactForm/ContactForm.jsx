@@ -3,6 +3,7 @@ import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { addContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
 const contactsSchema = Yup.object({
   name: Yup.string().required("Name is required").min(3).max(50),
@@ -18,7 +19,7 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(addContact(values));
+    dispatch(addContact({ ...values, id: nanoid() }));
     actions.resetForm();
   };
   return (
